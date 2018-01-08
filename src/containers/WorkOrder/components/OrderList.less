@@ -1,0 +1,100 @@
+.order-list {
+    padding: 16px;
+}
+
+.operation-icon{
+    font-size:16px;
+    vertical-align: middle;
+    cursor: pointer;
+}
+
+.order-list-point{
+    font-weight: bold;
+    color: red;
+}
+
+.order-detail-log-pic{
+    position: relative;
+
+    &:hover{
+        >img{
+            display: block;
+        }
+    }
+
+    >img{
+        position: absolute;
+        left: 0;
+        top: 0;
+        transform: translateY(-100%);
+        display: none;
+        max-width: 450px;
+    }
+}
+
+.define-ant-table{
+    .ant-table{
+        overflow: inherit;
+        table{
+            overflow: inherit;
+        }
+    }
+}
+
+.attach-list{
+    li{
+        float: left;
+        width: 100px;
+        height:100px;
+        margin-right: 10px;
+        cursor: pointer;
+        &:nth-child(3n){
+            margin-right: 0;
+        }
+
+        img{
+            display: block;
+            width:100%;
+            height: 100%;
+        }
+    }
+}
+
+.enlarge{
+    .ant-modal{
+        width: auto!important;
+        text-align: center;
+    }
+
+    .ant-modal-close-x{
+        font-size:20px;
+    }
+
+    .ant-modal-close{
+        top: -20px;
+        color: red;
+    }
+
+    .ant-modal-content{
+        background: none;
+        box-shadow: none;
+        display: inline-block;
+    }
+}
+
+.define-timer{
+
+}
+
+.seach-head-box{
+    display: inline-block;
+    width: 200px;
+    vertical-align: middle;
+}
+
+.specific-form{
+    .ant-input-disabled,
+    .ant-select-disabled{
+        color: #000;
+    }
+}

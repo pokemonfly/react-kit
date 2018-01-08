@@ -1,0 +1,17 @@
+.editable-text {
+    height: 32px;
+    display: inline-block;
+    .edit-icon,
+    .editable-cell-icon-check {
+        cursor     : pointer;
+        margin-left: 2px;
+        font-size  : 14px;
+        padding    : 2px;
+        &.check {
+            color: @success-color;
+        }
+        &.close {
+            color: @error-color;
+        }
+    }
+}

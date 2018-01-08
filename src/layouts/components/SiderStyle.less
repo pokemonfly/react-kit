@@ -1,0 +1,49 @@
+.sider {
+    .sider-trigger {
+        text-align: right;
+        color     : #979797;
+        background: #fbfbfb;
+        cursor: pointer;
+    }
+
+    .sider-user-logo {
+        margin    : 12px;
+        text-align: center;
+
+        .user-pic {
+            display      : inline-block;
+            overflow     : hidden;
+            // width        : 60px;
+            // height       : 60px;
+            // border-radius: 50%;
+        }
+    }
+        .op-btn {
+            margin-bottom: 16px;
+            text-align: center;
+            >button:first-child {
+                margin-right: 4px;
+            }
+        }
+    // 收拢状态
+    &.ant-layout-sider-collapsed {
+        .sider-trigger {
+            text-align: center;
+        }
+        .sider-user-logo {
+            // .user-pic,
+            // img {
+            //     width : 30px;
+            //     height: 30px;
+            // }
+
+            .user-nick {
+                display: none;
+            }
+        }
+
+        .op-btn {
+            display: none;
+        }
+    }
+}

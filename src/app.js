@@ -1,18 +1,22 @@
-import React from 'react';
 import ReactDOM from 'react-dom';
-import { Provider } from 'react-redux';
-import 'babel-polyfill'
-import Routes from './routes'
-import { history, createStore, makeRootSaga } from './redux';
+import React from 'react';
+import {Provider} from 'react-redux';
+import {syncHistoryWithStore} from 'react-router-redux';
+import {hashHistory} from 'react-router';
+import {Router} from 'react-router';
 
-const store = createStore( {}, {
-    // app: appReducer
-}, makeRootSaga( [] ) )
+import routes from './routes/createRoute';
+import DevTools from './redux/DevTools';
+import configureStore from './redux/configureStore';
 
-ReactDOM.render( (
+const store   = configureStore();
+const history = syncHistoryWithStore(hashHistory, store);
+
+ReactDOM.render((
     <Provider store={store}>
-    <div>
-        <Routes history={history}/>
-    </div>
-</Provider>
-), document.getElementById( 'root' ) );
+        <div>
+            <Router history={history} children={routes(store)}/> {< DevTools/>}
+        </div>
+    </Provider>
+), document.getElementById('root'));
+//__DEV__ &&

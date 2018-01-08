@@ -1,36 +1,11 @@
 {
-  "presets": [
-    [
-      "es2015",
-      {
-        "modules": false
-      }
-    ],
-    "react",
-    "stage-0"
-  ],
-  "plugins": [
-    "transform-runtime",
-    "transform-class-properties",
-    "transform-es2015-classes",
-    [
-      "import",
-      // use for weui
-      // {
-      //   "style": "../../../react-weui.min.css",
-      //   "libraryDirectory": "build/packages/components",
-      //   "libraryName": "react-weui"
-      // },
-      // {
-      //   "style": "style/weui.min.css",
-      //   "libraryDirectory": "dist",
-      //   "libraryName": "weui"
-      // },
-      {
-        "style": "../styles",
-        "libraryDirectory": "", // default is lib
-        "libraryName": "material-ui"
-      }
-    ]
-  ]
+    "presets": ["react", "es2015", "stage-0", ["env", {
+        "targets": {
+            "node": 4
+        }
+    }]],
+    "plugins": ["transform-class-properties", "transform-decorators-legacy", "transform-runtime", "lodash", ["import", {
+        "libraryName": "antd",
+        "style": true
+    }]]
 }

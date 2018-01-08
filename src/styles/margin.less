@@ -1,0 +1,72 @@
+/**
+ * @fileOverview 
+ * @author Crow
+ * @version 0.0.1
+ * @time 2015/10/27
+ */
+
+@maxSpacing       :       50;
+@margin           :       5;
+@mgtb             :       5;
+@mglr             :       5;
+/*-----------margin setting----------*/
+
+.margin(@n, @i: 0) when (@i =< @n) {
+  .mg@{i}{
+    margin: unit(@i, px);
+  }
+  .margin(@n, (@i + @margin));
+}
+
+.mgtb(@n, @i: 0) when (@i =< @n) {
+  .mgtb@{i}{
+    margin-top: unit(@i, px);
+    margin-bottom: unit(@i, px);
+  }
+  .mgtb(@n, (@i + @mgtb));
+}
+
+.mglr(@n, @i: 0) when (@i =< @n) {
+  .mglr@{i}{
+    margin-left: unit(@i, px);
+    margin-right: unit(@i, px);
+  }
+  .mglr(@n, (@i + @mglr));
+}
+
+.mgt(@n, @i: 0) when (@i =< @n) {
+  .mgt@{i}{
+    margin-top: unit(@i, px);
+  }
+  .mgt(@n, (@i + @mglr));
+}
+
+.mgb(@n, @i: 0) when (@i =< @n) {
+  .mgb@{i}{
+    margin-bottom: unit(@i, px);
+  }
+  .mgb(@n, (@i + @mglr));
+}
+
+.mgl(@n, @i: 0) when (@i =< @n) {
+  .mgl@{i}{
+    margin-left: unit(@i, px);
+  }
+  .mgl(@n, (@i + @mglr));
+}
+
+.mgr(@n, @i: 0) when (@i =< @n) {
+  .mgr@{i}{
+    margin-right: unit(@i, px);
+  }
+  .mgr(@n, (@i + @mglr));
+}
+
+.margin(@maxSpacing);
+.mgtb(@maxSpacing);
+.mglr(@maxSpacing);
+
+.mgt(@maxSpacing);
+.mgb(@maxSpacing);
+.mgr(@maxSpacing);
+.mgl(@maxSpacing);

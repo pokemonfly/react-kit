@@ -1,0 +1,278 @@
+// #utils 公共样式
+// 图标清晰调整
+.iconfont:before {
+  -webkit-text-stroke-width: 0.01px;
+}
+// 在`html`中`class`被引用
+// ------------------
+
+// ## 鼠标相关
+// - 鼠标选中`user-select`
+.user-select {
+  user-select: inherit !important;
+}
+
+// - 禁止鼠标选中`user-select-none`
+.user-select-none {
+  user-select: none;
+}
+
+// ## 盒子相关
+// - 行内块级元素`inline-block`
+.inline-block {
+  display: inline-block;
+  *display: inline;
+  zoom: 1;
+  vertical-align: middle;
+}
+
+// - 清除浮动`clearfix`
+.clearfix {
+  &:before,
+  &:after {
+    content: " ";
+    display: table;
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+// - 浮动方向 `pull-left` `pull-right`
+.pull-left {
+  float: left;
+}
+
+.pull-right {
+  float: right;
+}
+
+.inline-md{
+  vertical-align: middle;
+}
+
+.inline-top{
+  vertical-align: top;
+}
+
+.inline-bl{
+  vertical-align: baseline;
+}
+
+.hide{
+  display: none;
+}
+
+.hidden-bid-limit{
+  .hide();
+}
+
+.hideIm {
+  display: none !important;
+}
+
+.wsn{
+  white-space: nowrap;
+}
+
+
+.fz0{
+  font-size: 0;
+}
+
+.hidden{
+  visibility: hidden;
+}
+
+.op-groups {
+  &>* {
+    margin-bottom: 9px !important;
+  }
+}
+
+// ## 文本相关
+// - 文本溢出省略(兼容性处理方案) `text-overflow`
+.text-overflow {
+  .text {
+    .inline-block();
+    width: 120px;
+    white-space: nowrap;
+    overflow: hidden;
+    -o-text-overflow: ellipsis; /* for Opera */
+    text-overflow: ellipsis; /* for IE */
+    vertical-align: middle;
+  }
+  &:after {
+    content: "...";
+  }
+}
+
+// - 对齐方向`text-center` `text-right` `text-left`
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-left {
+  text-align: left;
+}
+
+//.disabled(@color, @bg, @border-color) {
+//  &, &:hover, &:focus, &:visited, &:active {
+//    cursor: no-drop;
+//    background-image: none;
+//    box-shadow: none;
+//    .user-select-none();
+//    color: @color;
+//    background-color: @bg;
+//    border-color: @border-color;
+//  }
+//}
+//
+//// - 背景由上到下线性渐变 `bg-linear-up-down`
+//.bg-linear-up-down(@upColor, @downColor) {
+//  background-color: @downColor;
+//  background: -webkit-gradient(linear, 0 0, 0 100%, from(@upColor), to(@downColor)); /* Webkit Old Kernel */
+//  background: -webkit-linear-gradient(to bottom, @upColor, @downColor); /* Webkit New Kernel */
+//  background: -moz-linear-gradient(to bottom, @upColor, @downColor); /* Gecko */
+//  background: -o-linear-gradient(to bottom, @upColor, @downColor); /* Presto */
+//  background: -ms-linear-gradient(to bottom, @upColor, @downColor); /* Trident IE10+ */
+//  //filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr= @upColor, endColorstr= @downColor);                /* IE6,IE7 */
+//  -ms-filter: progid:DXImageTransform.Microsoft.gradient(startColorstr= @upColor, endColorstr= @downColor); /* IE8 */
+//}
+//
+//// - 背景透明，通过渐变来实现背景透明，而不是生成一个div`bg-transparent`
+//.bg-transparent(@color) {
+//  @Transparency : argb(@color);
+//  background: transparent;
+//  background-color: @color;
+//  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr= @Transparency, endColorstr= @Transparency); /* IE6,IE7 */
+//  -ms-filter: progid:DXImageTransform.Microsoft.gradient(startColorstr= @Transparency, endColorstr= @Transparency); /* IE8 */
+//  zoom: 1;
+//}
+//
+//// - 阴影设置`box-shadow`
+//.box-shadow(@h, @v, @blur, @color) {
+//  box-shadow: @h @v @blur @color; /* Opera 10.5, IE 9.0 */
+//  filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=@h, OffY=@v, Color=@color, positive=1); /* IE6,IE7 */
+//  -ms-filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=@h, OffY=@v, Color=@color, positive=1); /* IE8 */
+//}
+//
+//// - 圆角`box-round`
+//.box-round(@size) {
+//  border-radius: @size;
+//}
+//
+//// - 旋转,注意最好使用在图片上面，如何使用在div上面会出现明显的锯齿`box-rotate`
+//.box-rotate(@deg) {
+//  transform: rotate(@deg);
+//  /* IE9 */
+//  filter: progid:DXImageTransform.Microsoft.Matrix(Dx=50%, Dy=50%, M11=cos(@deg), M12=sin(-@deg), M21=sin(@deg), M22=cos(@deg), SizingMethod='auto expand'); /* IE6,IE7 */
+//  -ms-filter: progid:DXImageTransform.Microsoft.Matrix(Dx=50%, Dy=50%, M11=cos(@deg), M12=sin(-@deg), M21=sin(@deg), M22=cos(@deg), SizingMethod='auto expand'); /* IE8 */
+//}
+//
+//
+//// 容器
+//.round-box(@color: @border-color, @radius: 2px) {
+//  border: 1px solid @color;
+//  border-radius: @radius;
+//  padding: 0;
+//}
+//
+//// 特效
+//.effect-shadow {
+//  box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.3);
+//}
+//.dialog-border {
+//  outline: 1px solid rgba(102, 102, 102, 0.2);
+//}
+//
+//// z-index
+//.layer-index (@rank: 0) {
+//  .rank(0) {z-index: inherit};
+//  .rank(1) {z-index: 100};
+//  .rank(2) {z-index: 200};
+//  .rank(3) {z-index: 300};
+//  .rank(4) {z-index: 400};
+//  .rank(5) {z-index: 500};
+//  .rank(6) {z-index: 600};
+//  .rank(7) {z-index: 700};
+//  .rank(8) {z-index: 800};
+//  .rank(9) {z-index: 900};
+//  .rank(@rank) when (default()) {z-index: @rank};
+//
+//  .rank(@rank);
+//}
+//
+//// 文字缩进 用于输入框
+//.indent-half {
+//  padding-left: 0.5em;
+//  padding-right: 0.5em;
+//}
+//
+//// TODO 未整理
+//.pre(@style,@value){
+//  -webkit-@{style}: @value;
+//  -moz-@{style}: @value;
+//  -ms-@{style}: @value;
+//  @{style}: @value;
+//}
+//.linear(@f,@t) {
+//  background: -webkit-linear-gradient(top, @f, @t);
+//  background: -moz-linear-gradient(top, @f, @t);
+//  background: -o-linear-gradient(top, @f, @t);
+//  background: -ms-linear-gradient(top, @f, @t);
+//  //filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=@f, endColorstr=@t);
+//  -ms-filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=@f, endColorstr=@t);
+//}
+//
+//.zi6 {
+//  .mask {
+//    .layer-index(6) !important;
+//  }
+//}
+//
+//.mark-red {
+//  color: red !important;
+//}
+//.mark-star{
+//  font-size: 12px;
+//  vertical-align: text-top;
+//  color: #4abe5b;
+//  position: relative;
+//  top: 1px;
+//}
+//
+//.status-block {
+//  width: 10px;
+//  height: 4px;
+//  background-color: #dcdcdc;
+//  display: block;
+//
+//  &.inline {
+//    .inline-block();
+//  }
+//  &.active {
+//    background-color: @base-green;
+//  }
+//}
+//
+//.horizontal-dotted-line{
+//  border-bottom: 1px dashed #dcdcdc;
+//  padding: 10px 0;
+//}
+
+.cp{
+  cursor: pointer;
+}
+
+.fz0{
+  font-size:0;
+}
+
+.lh0{
+  line-height:0;
+}

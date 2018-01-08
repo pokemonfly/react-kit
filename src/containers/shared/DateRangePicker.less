@@ -1,0 +1,47 @@
+.data-range-picker {
+    width: 210px !important;
+    .ant-calendar-picker-icon,
+    .ant-calendar-picker-input,
+    .ant-calendar-range-picker-separator {
+        color           : #fff;
+        background-color: @primary-color;
+    }
+    .ant-calendar-picker-input {
+        padding-left: 20px;
+    }
+    .ant-calendar-range-picker-input {
+        width: 47%;
+    }
+    .ant-calendar-range-picker-separator {
+        margin-left: -4px;
+    }
+    .ant-calendar-picker-icon {
+        // left: 8px;
+        &:after {
+            content   : "\E61D";
+            margin-top: 2px;
+            color     : #fff;
+        }
+        &:before {
+            content    : "\e612";
+            color      : #fff;
+            font-family: "iconfont";
+            position   : absolute;
+            left       : -180px;
+            font-size  : 16px;
+            top        : 1px;
+        }
+    }
+}
+.ant-calendar-picker-container .ant-calendar-time-picker-btn {
+    display: none !important;
+}
+.ant-calendar-footer-extra.ant-calendar-range-quick-selector > a {
+    border       : 1px solid @primary-color;
+    padding      : 2px 4px;
+    border-radius: 3px;
+    &:hover {
+        background: @primary-color;
+        color     : #fff;
+    }
+}

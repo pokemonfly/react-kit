@@ -1,0 +1,126 @@
+@import 'constants';
+div:focus {
+    outline: none;
+}
+hr {
+    height    : 0;
+    border    : 0;
+    border-top: 1px dashed @border-color-base;
+    &.line {
+        border-top: 1px solid @border-color-base;
+    }
+}
+.hide {
+    display: none;
+}
+.rc-trigger-popup {
+    z-index: 10;
+}
+// 表格的修改笔站位
+.table-edit-icon {
+    width  : 24px;
+    display: inline-block;
+    color  : @primary-color;
+}
+// 弹窗之类浮动面板的边框
+.float-panel {
+    position        : relative;
+    border          : 1px solid #fff;
+    outline         : none;
+    background-color: #fff;
+    border-radius   : 4px;
+    box-shadow      : 0 1px 6px rgba(0,0,0,.2);
+    background-clip : padding-box;
+    padding         : 16px;
+    .header {
+        font-weight  : bold;
+        font-size    : 14px;
+        margin-bottom: 4px;
+    }
+    .footer {
+        padding   : 12px;
+        background: @footer-bg-color;
+        margin    : -8px -16px -16px;
+        border-top: 1px solid @border-color-base;
+        .cancel-btn {
+            margin-left: 12px;
+        }
+    }
+}
+.msg-success {
+    color: @success-color
+}
+.msg-danger {
+    color: @error-color
+}
+// 覆盖默认浏览器的样式
+::-webkit-scrollbar,
+::-webkit-scrollbar-button:end:decrement,
+::-webkit-scrollbar-button:end:increment,
+::-webkit-scrollbar-button:start:decrement,
+::-webkit-scrollbar-button:start:increment {
+    width  : 9px;
+    height : 9px;
+    display: none;
+}
+::-webkit-scrollbar,
+::-webkit-scrollbar-button:end:increment,
+::-webkit-scrollbar-button:start:decrement {
+    display: block;
+}
+::-webkit-scrollbar-track {
+    border-radius: 4.5px;
+    background   : rgba(0, 0, 0, .15);
+    :disabled {
+        display: none;
+    }
+}
+::-webkit-scrollbar-thumb {
+    border-radius     : 4.5px;
+    background        : rgba(0, 0, 0, .25);
+    border            : 1px inset rgba(0, 0, 0, .15);
+    -webkit-transition: background-color 2.5s linear;
+}
+:hover::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, .35);
+}
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 0, 0, .55);
+}
+// card-tab 覆盖默认样式
+.ant-tabs.ant-tabs-card > .ant-tabs-bar .ant-tabs-tab.ant-tabs-tab-active {
+    border-top             : 2px solid #51b95b;
+    border-top-left-radius : 0;
+    border-top-right-radius: 0;
+    padding-top            : 8px !important;
+    padding-bottom         : 9px !important;
+}
+.ant-tabs.ant-tabs-card > .ant-tabs-bar .ant-tabs-tab {
+    padding: 9px 21px 8px !important;
+}
+.ant-tabs.ant-tabs-card > .ant-tabs-bar .ant-tabs-nav-container {
+    height: 40px!important;
+}
+.ant-dropdown-link {
+    text-decoration: none !important;
+}
+.ant-modal-header {
+    border-bottom: 0 !important;
+    .ant-modal-title {
+        font-size: 16px;
+    }
+}
+.ant-modal-footer {
+    border-top: 0 !important;
+}
+.ant-form-item-with-help {
+    margin-bottom: 0px !important;
+}
+
+
+.ant-div{
+    &.ant-input{
+        height: 118px;
+        overflow: auto;
+    }
+}

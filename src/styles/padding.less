@@ -1,0 +1,72 @@
+/**
+ * @fileOverview 
+ * @author Crow
+ * @version 0.0.1
+ * @time 2015/10/27
+ */
+
+@maxSpacing       :       50;
+@pad              :       5;
+@pdtb             :       5;
+@pdlr             :       5;
+
+.padding(@n, @i: 0) when (@i =< @n) {
+  .pd@{i}{
+    padding: unit(@i, px);
+  }
+  .padding(@n, (@i + @pad));
+}
+
+
+.pdtb(@n, @i: 0) when (@i =< @n) {
+  .pdtb@{i}{
+    padding-top: unit(@i, px);
+    padding-bottom: unit(@i, px);
+  }
+  .pdtb(@n, (@i + @pdtb));
+}
+
+
+.pdlr(@n, @i: 0) when (@i =< @n) {
+  .pdlr@{i}{
+    padding-left: unit(@i, px);
+    padding-right: unit(@i, px);
+  }
+  .pdlr(@n, (@i + @pdlr));
+}
+
+.pdl(@n, @i: 0) when (@i =< @n) {
+  .pdl@{i}{
+    padding-left: unit(@i, px);
+  }
+  .pdl(@n, (@i + @pdlr));
+}
+
+.pdt(@n, @i: 0) when (@i =< @n) {
+  .pdt@{i}{
+    padding-top: unit(@i, px);
+  }
+  .pdt(@n, (@i + @pdlr));
+}
+
+.pdr(@n, @i: 0) when (@i =< @n) {
+  .pdr@{i}{
+    padding-right: unit(@i, px);
+  }
+  .pdr(@n, (@i + @pdlr));
+}
+
+.pdb(@n, @i: 0) when (@i =< @n) {
+  .pdb@{i}{
+    padding-bottom: unit(@i, px);
+  }
+  .pdb(@n, (@i + @pdlr));
+}
+
+.padding(@maxSpacing);
+.pdtb(@maxSpacing);
+.pdlr(@maxSpacing);
+.pdl(@maxSpacing);
+.pdt(@maxSpacing);
+.pdr(@maxSpacing);
+.pdb(@maxSpacing);

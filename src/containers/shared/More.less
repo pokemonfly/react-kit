@@ -1,0 +1,59 @@
+@border-radius-base: 4px;
+.limit-height {
+    max-height: 280px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+.more-panel {
+    width  : 500px;
+    height : 388px;
+    padding: 12px;
+    .title {
+        padding    : 8px 0;
+        font-weight: bold;
+        display    : inline-block;
+    }
+    .item-list {
+        border: 1px solid @border-color-base;
+        .limit-height();
+        .item {
+            padding    : 4px;
+            line-height: 20px;
+        }
+    }
+    .row {
+        margin-bottom: 12px;
+    }
+    .footer {
+        padding-top               : 8px;
+        margin-top                : 0;
+        border-bottom-left-radius : @border-radius-base;
+        border-bottom-right-radius: @border-radius-base;
+        .cancel-btn {
+            margin-left: 8px;
+        }
+        .reset-btn {
+            float      : right;
+            line-height: 28px;
+        }
+    }
+}
+.sort-list {
+    .limit-height()
+}
+.sort-item {
+    width        : 150px;
+    height       : 32px;
+    border       : 1px dashed @border-color-base;
+    margin-bottom: 4px;
+    padding      : 6px 12px;
+    cursor       : pointer;
+    user-select  : none;
+}
+.sort-helper {
+    list-style      : none;
+    background-color: @highlight-color;
+    color           : #fff;
+    z-index         : 99999;
+    border-color    : #fff;
+}

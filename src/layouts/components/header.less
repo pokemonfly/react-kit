@@ -1,0 +1,43 @@
+.page-header {
+    height: 60px;
+    width : 100%;
+    color : #fff;
+    .title {
+        font-size   : 20px;
+        font-weight : bold;
+        padding-left: 24px;
+    }
+    .pull-right {
+        float    : right;
+        font-size: 16px;
+        height   : 100%;
+        .versionName {
+            color       : @highlight-color;
+            margin-right: 30px;
+        }
+        > span {
+            display       : inline-block;
+            vertical-align: top;
+        }
+        .short-cut {
+            margin-left: 20px;
+            height     : 100%;
+            .short-cut-btn {
+                display     : inline-block;
+                width       : 60px;
+                height      : 100%;
+                cursor      : pointer;
+                text-align  : center;
+                border-left : 1px solid rgba(255,255,255,0.2);
+                border-right: 1px solid rgba(255,255,255,0.2);
+                > .iconfont {
+                    font-size: 32px;
+                }
+                &:hover {
+                    background: #fff;
+                    color     : @primary-color;
+                }
+            }
+        }
+    }
+}
